@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Payments Screen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffe5ca;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary_color: "#683400",
+                        secondary_color: {
+                            300: "#d7b56d",
+                            800: "#D7B56D33",
+                        },
+                        zinc: {
+                            100: "#F1F1F1",
+                            600: "rgb(82 82 91)",
+                        },
+                    },
+                    screens: {
+                        xs: "130px",
+                        // => @media (max-width: 639px) { ... }
+
+                        sm: "640px",
+                        // => @media (min-width: 640px and max-width: 767px) { ... }
+
+                        md: "768px",
+                        // => @media (min-width: 768px and max-width: 1023px) { ... }
+
+                        lg: "1024px",
+                        // => @media (min-width: 1024px and max-width: 1279px) { ... }
+
+                        xl: "1280px",
+                        // => @media (min-width: 1280px and max-width: 1535px) { ... }
+
+                        "2xl": "1536px",
+                        // => @media (min-width: 1536px) { ... }
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <section class="w-screen h-screen p-6 bg-zinc-100">
+        <div class="flex justify-between items-center mb-5">
+            <h2 class="xs:text-base sm:text-lg font-bold">Payments</h2>
+            <button class="font-semibold rounded-lg text-white px-5 py-3 bg-primary_color hidden sm:block">
+                Download Invoice
+            </button>
+        </div>
+        <div class="bg-white w-full ma flex flex-col justify-start items-start rounded-3xl p-5">
+            <h2 class="font-bold mb-4 xs:text-sm sm:text-base">Saved UPI</h2>
+
+            <div class="cards_holder w-full flex flex-col justify-start items-start gap-2 h-96 overflow-y-auto">
+
+                <!-- card 1 -->
+                <div
+                    class="bg-zinc-100 w-full xs:h-20 sm:h-14 rounded-lg flex justify-between xs:items-end sm:items-center p-4">
+                    <div class="flex xs:gap-1 sm:gap-6 xs:flex-col sm:flex-row xs:items-start sm:items-center">
+                        <div class="flex items-center">
+                            <span>Google Pay</span>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.7356 6.61339C16.1082 5.67394 14.0271 6.23218 13.0866 7.85963L10.7159 11.9664C10.0299 13.1523 10.913 13.5667 11.8978 14.1571L14.179 15.4738C14.9515 15.9194 15.9382 15.6548 16.3838 14.8834L18.8209 10.6629C19.6396 9.24465 19.1538 7.43216 17.7356 6.61339Z"
+                                    fill="#EA4335" />
+                                <path
+                                    d="M15.054 8.31361L12.7728 6.99699C11.5135 6.29793 10.8004 6.25166 10.2833 7.07343L6.91884 12.9002C5.97938 14.5267 6.53863 16.6067 8.16506 17.5442C9.58328 18.3629 11.3958 17.8771 12.2146 16.4589L15.6434 10.5194C16.091 9.74694 15.8265 8.7592 15.054 8.31361Z"
+                                    fill="#FBBC04" />
+                                <path
+                                    d="M15.4918 5.3179L13.8895 4.39254C12.1173 3.3696 9.85112 3.97612 8.82819 5.7484L5.77749 11.032C5.32687 11.8116 5.59443 12.8093 6.37396 13.259L8.16837 14.295C9.05449 14.807 10.187 14.5032 10.699 13.617L14.1842 7.58104C14.9064 6.33078 16.5047 5.90229 17.755 6.62448L15.4918 5.3179Z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M9.26191 7.26069L7.52987 6.2629C6.75738 5.81832 5.77067 6.08185 5.32508 6.85232L3.24703 10.4432C2.22409 12.2104 2.83061 14.4715 4.60289 15.4915L5.92154 16.2508L7.52081 17.1722L8.21485 17.5715C6.98269 16.7467 6.59142 15.0941 7.34478 13.7926L7.88291 12.8632L9.85334 9.45843C10.2979 8.68999 10.0334 7.70526 9.26191 7.26069Z"
+                                    fill="#4285F4" />
+                            </svg>
+                        </div>
+                        <p>nimisha 2714@oksbi</p>
+                    </div>
+
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 5H4.16667H17.5" stroke="#683400" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M15.8327 5.00032V16.667C15.8327 17.109 15.6571 17.5329 15.3445 17.8455C15.032 18.1581 14.608 18.3337 14.166 18.3337H5.83268C5.39065 18.3337 4.96673 18.1581 4.65417 17.8455C4.34161 17.5329 4.16602 17.109 4.16602 16.667V5.00032M6.66602 5.00032V3.33366C6.66602 2.89163 6.84161 2.46771 7.15417 2.15515C7.46673 1.84259 7.89066 1.66699 8.33268 1.66699H11.666C12.108 1.66699 12.532 1.84259 12.8445 2.15515C13.1571 2.46771 13.3327 2.89163 13.3327 3.33366V5.00032"
+                            stroke="#683400" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8.33398 9.16699V14.167" stroke="#683400" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M11.666 9.16699V14.167" stroke="#683400" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
